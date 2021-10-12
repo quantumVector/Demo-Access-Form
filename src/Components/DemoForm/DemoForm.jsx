@@ -11,25 +11,51 @@ const DemoForm = (props) => {
 
         <h3 className={classes.subtitle}>Юридическое лицо</h3>
         <div className={classes.block}>
-          <input className={classes.item} type="text" />
-          <select className={classes.item} name="category"></select>
-          <select className={classes.item} name="country"></select>
+          <div className={classes.largeWrap}>
+            <input className={classes.item} type="text" />
+          </div>
+          <div className={classes.shortWrap}>
+            <select className={classes.item} name="category"></select>
+          </div>
+          <div className={classes.shortWrap}>
+            <select className={classes.item} name="country"></select>
+          </div>
         </div>
 
         <h3 className={classes.subtitle}>Представитель юридического лица</h3>
         <div className={classes.block}>
-          <input className={classes.item} type="text" />
-          <input className={classes.item} type="text" />
-          <input className={classes.item} type="text" />
+          <div className={classes.shortWrap}>
+            <input className={classes.item} type="text" />
+          </div>
+          <div className={classes.shortWrap}>
+            <input className={classes.item} type="text" />
+          </div>
+          <div className={classes.shortWrap}>
+            <input className={classes.item} type="text" />
+          </div>
+          {/* <div className={classes.shortWrap}>
+            <input className={classes.item} type="text" />
+          </div> */}
         </div>
 
         <h3 className={classes.subtitle}>Профессиональные интересы</h3>
         <div className={classes.block}>
-          <input className={classes.item} type="text" />
-          <select className={classes.item} name="markets"></select>
-          <select className={classes.item} name="lang"></select>
-          <select className={classes.item} name="interests"></select>
-          <textarea name="message"></textarea>
+          {/* потом удалить */}
+          <div className={classes.shortWrap}>
+            <input className={classes.item} type="text" />
+          </div>
+          <div className={classes.shortWrap}>
+            <select className={classes.item} name="markets"></select>
+          </div>
+          <div className={classes.shortWrap}>
+            <select className={classes.item} name="lang"></select>
+          </div>
+          <div className={classes.largeWrap}>
+            <select className={classes.item} name="interests"></select>
+          </div>
+          <div className={classes.largeWrap}>
+            <textarea className={classes.item + ' ' + classes.areaItem} name="message"></textarea>
+          </div>
         </div>
 
         <div className={classes.block}>
@@ -40,8 +66,12 @@ const DemoForm = (props) => {
         <div className={classes.line}></div>
 
         <div className={classes.block}>
-          <p className={classes.conditions}>Нажимая кнопку “Запросить демо-доступ” вы принимаете пользовательское соглашение и согласны с правилами использования и обработки персональных данных</p>
-          <button className={classes.btn}>Отправить заявку</button>
+          <div className={classes.shortWrap}>
+            <button className={classes.btn}>Отправить заявку</button>
+          </div>
+          <div className={classes.shortWrap}>
+            <p className={classes.conditions}>Нажимая кнопку “Запросить демо-доступ” вы принимаете <a href="#">пользовательское соглашение</a> и согласны с <a href="#">правилами использования и обработки персональных данных</a></p>
+          </div>
         </div>
       </form>
     </section>
