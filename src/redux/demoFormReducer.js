@@ -15,16 +15,17 @@ const initialState = {
 const demoFormReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'export.link/demoForm/SET_CATEGORIES_DATA': {
-      return { ...state, ...action.categories };
+      console.log('here')
+      return { ...state, categories: action.data };
     }
     case 'export.link/demoForm/SET_COUNTRIES_DATA': {
-      return { ...state, ...action.countries };
+      return { ...state, countries: action.data };
     }
     case 'export.link/demoForm/SET_LANGUAGES_DATA': {
-      return { ...state, ...action.languages };
+      return { ...state, languages: action.data };
     }
     case 'export.link/demoForm/SET_INDUSTRIES_DATA': {
-      return { ...state, ...action.industries };
+      return { ...state, industries: action.data };
     }
     default:
       return state;
@@ -40,22 +41,22 @@ export const getFormData = () => async (dispatch) => {
 
 const getCategoriesData = () => async (dispatch) => {
   const response = await demoFormAPI.getCategories();
-  if (response.data.resultCode === 0) dispatch(setCategoriesData(response.data));
+  if (response.data) dispatch(setCategoriesData(response.data));
 }
 
 const getCountriesData = () => async (dispatch) => {
   const response = await demoFormAPI.getCountries();
-  if (response.data.resultCode === 0) dispatch(setCountriesData(response.data));
+  if (response.data) dispatch(setCountriesData(response.data));
 }
 
 const getLanguagesData = () => async (dispatch) => {
   const response = await demoFormAPI.getLanguages();
-  if (response.data.resultCode === 0) dispatch(setLanguagesData(response.data));
+  if (response.data) dispatch(setLanguagesData(response.data));
 }
 
 const getIndustriesData = () => async (dispatch) => {
   const response = await demoFormAPI.getIndustries();
-  if (response.data.resultCode === 0) dispatch(setIndustriesData(response.data));
+  if (response.data) dispatch(setIndustriesData(response.data));
 }
 
 const setCategoriesData = (data) => (

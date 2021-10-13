@@ -1,10 +1,10 @@
 import './App.css';
-import DemoForm from './Components/DemoForm/DemoForm';
+import DemoFormContainer from './Components/DemoForm/DemoFormContainer';
 
 function App(props) {
   return (
     <div className="app-wrapper">
-      <DemoForm />
+      <DemoFormContainer state={props.state} />
     </div>
   );
 }
