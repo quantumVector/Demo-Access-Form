@@ -13,12 +13,15 @@ const DemoForm = (props) => {
         <div className={classes.block}>
           <div className={classes.largeWrap}>
             <input className={classes.item} type="text" />
+            <label className={classes.label}>Название юридического лица*</label>
           </div>
           <div className={classes.shortWrap}>
             <select className={classes.item} name="category"></select>
+            <label className={classes.label}>Категория*</label>
           </div>
           <div className={classes.shortWrap}>
             <select className={classes.item} name="country"></select>
+            <label className={classes.label}>Страна*</label>
           </div>
         </div>
 
@@ -26,12 +29,15 @@ const DemoForm = (props) => {
         <div className={classes.block}>
           <div className={classes.shortWrap}>
             <input className={classes.item} type="text" />
+            <label className={classes.label}>Имя*</label>
           </div>
           <div className={classes.shortWrap}>
             <input className={classes.item} type="text" />
+            <label className={classes.label}>Фамилия*</label>
           </div>
           <div className={classes.shortWrap}>
             <input className={classes.item} type="text" />
+            <label className={classes.label}>Должность*</label>
           </div>
           {/* <div className={classes.shortWrap}>
             <input className={classes.item} type="text" />
@@ -43,18 +49,23 @@ const DemoForm = (props) => {
           {/* потом удалить */}
           <div className={classes.shortWrap}>
             <input className={classes.item} type="text" />
+            <label className={classes.label}>Ваш корпоративный e-mail*</label>
           </div>
           <div className={classes.shortWrap}>
             <select className={classes.item} name="markets"></select>
+            <label className={classes.label}>Целевые рынки*</label>
           </div>
           <div className={classes.shortWrap}>
             <select className={classes.item} name="lang"></select>
+            <label className={classes.label}>Предпочтительный язык*</label>
           </div>
           <div className={classes.largeWrap}>
             <select className={classes.item} name="interests"></select>
+            <label className={classes.label}>Интересующие отрасли*</label>
           </div>
           <div className={classes.largeWrap}>
             <textarea className={classes.item + ' ' + classes.areaItem} name="message"></textarea>
+            <label className={classes.label}>Сообщение</label>
           </div>
         </div>
 

@@ -90,6 +90,7 @@
 }
 
 .largeWrap {
+  position: relative;
   width: 100%;
 }
 
@@ -100,6 +101,7 @@
 } */
 
 .shortWrap {
+  position: relative;
   width: 100%;
 }
 
@@ -111,6 +113,23 @@
   border: 1px solid #F4F4F6;
   box-sizing: border-box;
   border-radius: 5px;
+}
+
+.item:focus {
+  border: 2px solid #66aad4;
+  outline: none;
+}
+
+.label {
+  position: absolute;
+  top: 13px;
+  left: 15px;
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 150%;
+  color: #4E556A;
 }
 
 .areaItem {
