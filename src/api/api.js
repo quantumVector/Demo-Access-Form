@@ -6,24 +6,24 @@ const instance = axios.create({
 });
 
 export const demoFormAPI = {
-  getCategories() {
-    return instance.get('api/v1/public/user_category/input_list')
-      .then(response => response.data);
-  },
-
-  getCountries() {
-    return instance.get('api/v1/public/country/input_list')
-      .then(response => response.data);
-  },
-
-  getLanguages() {
-    return instance.get('api/v1/public/lang/input_list')
-      .then(response => response.data);
-  },
-
-  getIndustries() {
-    return instance.get('api/v1/public/industry/input_list')
-      .then(response => response.data);
+  getFormData() {
+    return axios.all([
+      instance.get('api/v1/public/user_category/input_list'),
+      instance.get('api/v1/public/country/input_list'),
+      instance.get('api/v1/public/lang/input_list'),
+      instance.get('api/v1/public/industry/input_list')
+    ])
+      .then(axios.spread((...responses) => {
+        return {
+          categories: responses[0].data.data,
+          countries: responses[1].data.data,
+          languages: responses[2].data.data,
+          industries: responses[3].data.data
+        };
+      }))
+      .catch((e) => {
+        console.log('error:', e)
+      });
   },
 
   submitForm(/* data */) {
