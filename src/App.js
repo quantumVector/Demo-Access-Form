@@ -1,7 +1,7 @@
 import './App.css';
 import DemoForm from './Components/DemoForm/DemoForm';
 
-function App() {
+function App(props) {
   return (
     <div className="app-wrapper">
       <DemoForm />
