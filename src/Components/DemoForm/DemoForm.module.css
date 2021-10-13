@@ -183,7 +183,80 @@
   border-radius: 5px;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (min-width: 768px) and (max-width: 1359px) {
+  .demoForm {
+    padding-top: 95px;
+  }
+  .sectionTitle {
+    font-size: 32px;
+  }
+  .discription {
+    margin-top: 26px;
+    width: 521px;
+    font-size: 15px;
+  }
+  .formWrap {
+    width: 690px;
+  }
+  .formTitle {
+    margin-top: 45px;
+    padding: 17px 0;
+    font-size: 20px;
+  }
+  .subtitle {
+    margin-top: 40px;
+    font-size: 18px;
+  }
+  .subtitle:nth-child(5) {
+    margin-top: 10px;
+  }
+  .block {
+    margin-top: 30px;
+    width: 630px;
+  }
+  .block:nth-child(4) {
+    margin-top: 31px;
+  }
+  .block:nth-child(6) {
+    margin-top: 30px;
+  }
+  .block:nth-child(7) {
+    margin-top: 17px;
+  }
+  .shortWrap {
+    width: 305px;
+  }
+  .item {
+    margin-bottom: 20px;
+    height: 56px;
+  }
+  .label {
+    top: 19px;
+    left: 21px;
+    font-size: 15px;
+  }
+  .areaItem {
+    height: 94px;
+  }
+  .confirmation {
+    width: 599px;
+    font-size: 14px;
+  }
+  .line {
+    margin-top: 40px;
+  }
+  .conditions {
+    margin-top: 51px;
+    font-size: 12px;
+  }
+  .btn {
+    margin-top: 50px;
+    margin-left: 65px;
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .demoForm {
     padding-top: 50px;
   }
