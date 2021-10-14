@@ -40,8 +40,8 @@ const DemoForm = ({ categories, countries, languages, industries, getFormData })
             <h3 className={classes.subtitle}>Юридическое лицо</h3>
             <div className={classes.block}>
               <MyTextInput label="Название юридического лица*" size="large" name="company_name" type="text" />
-              <MySelect label="Категория*" size="short" name="category" />
-              <MySelect label="Страна*" size="short" name="country" />
+              <MySelect label="Категория*" size="short" name="user_category" />
+              <MySelect label="Страна*" size="short" name="user_country" />
             </div>
             <h3 className={classes.subtitle}>Представитель юридического лица</h3>
             <div className={classes.block}>

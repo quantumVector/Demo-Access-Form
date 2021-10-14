@@ -49,6 +49,18 @@
   resize: none;
 }
 
+.error {
+  position: absolute;
+  top: 56px;
+  left: 0;
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 150%;
+  color: #F22A2E;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1359px) {
   .shortWrap {
     width: 305px;
