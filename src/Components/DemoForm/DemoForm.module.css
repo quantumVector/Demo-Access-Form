@@ -89,46 +89,9 @@
   margin-bottom: 5px;
 }
 
-.largeWrap {
-  position: relative;
-  width: 100%;
-}
-
 .shortWrap {
   position: relative;
   width: 310px;
-}
-
-.item {
-  margin-bottom: 20px;
-  width: 100%;
-  height: 56px;
-  background: #F8F9F9;
-  border: 1px solid #F4F4F6;
-  box-sizing: border-box;
-  border-radius: 5px;
-}
-
-.item:focus {
-  border: 2px solid #66aad4;
-  outline: none;
-}
-
-.label {
-  position: absolute;
-  top: 18px;
-  left: 21px;
-  font-family: Manrope;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 150%;
-  color: #4E556A;
-}
-
-.areaItem {
-  height: 105px;
-  resize: none;
 }
 
 .confirmation {
@@ -226,18 +189,6 @@
   .shortWrap {
     width: 305px;
   }
-  .item {
-    margin-bottom: 20px;
-    height: 56px;
-  }
-  .label {
-    top: 19px;
-    left: 21px;
-    font-size: 15px;
-  }
-  .areaItem {
-    height: 94px;
-  }
   .confirmation {
     width: 599px;
     font-size: 14px;
@@ -301,18 +252,6 @@
   }
   .shortWrap {
     width: 100%;
-  }
-  .item {
-    margin-bottom: 10px;
-    height: 45px;
-  }
-  .label {
-    top: 13px;
-    left: 15px;
-    font-size: 14px;
-  }
-  .areaItem {
-    height: 125px;
   }
   .confirmation {
     width: 276px;

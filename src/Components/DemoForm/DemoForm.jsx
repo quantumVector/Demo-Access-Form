@@ -1,67 +1,11 @@
 import React, { useEffect } from 'react';
-import { Formik, Form, ErrorMessage, useField } from 'formik';
-import * as yup from "yup";
+import { Formik, Form } from 'formik';
 import classes from './DemoForm.module.css';
-
-const MyTextInput = ({ label, size, ...props }) => {
-  const [field, meta] = useField(props);
-  return (
-    <div className={classes[`${size}Wrap`]}>
-      <input className={classes.item} {...field} {...props} />
-      <label htmlFor={props.id || props.name} className={classes.label}>{label}</label>
-      {meta.touched && meta.error ? (
-        <div className="error">{meta.error}</div>
-      ) : null}
-    </div>
-  );
-};
-
-const MySelect = ({ label, size, ...props }) => {
-  const [field, meta] = useField(props);
-  return (
-    <div className={classes[`${size}Wrap`]}>
-      <select className={classes.item} {...field} {...props} />
-      <label htmlFor={props.id || props.name} className={classes.label}>{label}</label>
-      {meta.touched && meta.error ? (
-        <div className="error">{meta.error}</div>
-      ) : null}
-    </div>
-  );
-};
-
-const MyTextArea = ({ label, size, ...props }) => {
-  const [field, meta] = useField(props);
-  return (
-    <div className={classes[`${size}Wrap`]}>
-      <textarea className={classes.item + ' ' + classes.areaItem} {...field} {...props} />
-      <label htmlFor={props.id || props.name} className={classes.label}>{label}</label>
-      {meta.touched && meta.error ? (
-        <div className="error">{meta.error}</div>
-      ) : null}
-    </div>
-  );
-};
-
-const MyCheckbox = ({ children, className = '', ...props }) => {
-  const [field, meta] = useField({ ...props, type: 'checkbox' });
-  return (
-    <>
-      <input type="checkbox" {...field} {...props} />
-      <p className={className}>{children}</p>
-      {meta.touched && meta.error ? (
-        <div className="error">{meta.error}</div>
-      ) : null}
-    </>
-  );
-};
+import { MyCheckbox, MySelect, MyTextArea, MyTextInput } from '../common/FormConrtol/FormControl';
+import { formValidationSchema } from '../../utils/validators';
 
 const DemoForm = ({ categories, countries, languages, industries, getFormData }) => {
   useEffect(() => getFormData(), []);
-
-  const validationSchema = yup.object({
-    company_name: yup.string().required(),
-  });
-
 
   return (
     <section className={classes.demoForm}>
@@ -69,7 +13,6 @@ const DemoForm = ({ categories, countries, languages, industries, getFormData })
       <p className={classes.discription}>Доступ к платформе возможен исключительно для представителей юридических лиц или индивидуальных предпринимателей</p>
       <div className={classes.formWrap}>
         <h2 className={classes.formTitle}>Заполните контактные данные</h2>
-
         <Formik
           initialValues={{
             company_name: '',
@@ -85,7 +28,7 @@ const DemoForm = ({ categories, countries, languages, industries, getFormData })
             message: '',
             check: ''
           }}
-          validationSchema={validationSchema}
+          validationSchema={formValidationSchema}
           onSubmit={(data, { setSubmitting }) => {
             setSubmitting(true);
             // make async call
