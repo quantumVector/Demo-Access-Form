@@ -6,7 +6,7 @@ import DemoForm from './DemoForm';
 const mapStateToProps = (state) => ({
   categories: state.demoForm.categories,
   countries: state.demoForm.countries,
-  languages: state.demoForm.countries,
+  languages: state.demoForm.languages,
   industries: state.demoForm.industries,
 });
 

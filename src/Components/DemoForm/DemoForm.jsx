@@ -7,6 +7,11 @@ import { formValidationSchema } from '../../utils/validators';
 const DemoForm = ({ categories, countries, languages, industries, getFormData }) => {
   useEffect(() => getFormData(), []);
 
+  const categoriesOptions = categories.map(item => ({ value: item.id, label: item.name }));
+  const countriesOptions = countries.map(item => ({ value: item.id, label: item.name }));
+  const languagesOptions = languages.map(item => ({ value: item.id, label: item.name }));
+  const industriesOptions = industries.map(item => ({ value: item.id, label: item.name }));
+
   return (
     <section className={classes.demoForm}>
       <h1 className={classes.sectionTitle}>Запросить демо-доступ</h1>
@@ -40,8 +45,8 @@ const DemoForm = ({ categories, countries, languages, industries, getFormData })
             <h3 className={classes.subtitle}>Юридическое лицо</h3>
             <div className={classes.block}>
               <MyTextInput label="Название юридического лица*" size="large" name="company_name" type="text" />
-              <MySelect label="Категория*" size="short" name="user_category" />
-              <MySelect label="Страна*" size="short" name="user_country" />
+              <MySelect label="Категория*" size="short" option={categoriesOptions} name="user_category" />
+              <MySelect label="Страна*" size="short" option={countriesOptions} name="user_country" />
             </div>
             <h3 className={classes.subtitle}>Представитель юридического лица</h3>
             <div className={classes.block}>
@@ -52,9 +57,9 @@ const DemoForm = ({ categories, countries, languages, industries, getFormData })
             </div>
             <h3 className={classes.subtitle}>Профессиональные интересы</h3>
             <div className={classes.block}>
-              <MySelect label="Целевые рынки*" size="short" name="markets" />
-              <MySelect label="Предпочтительный язык*" size="short" name="lang" />
-              <MySelect label="Интересующие отрасли*" size="large" name="industry" />
+              <MySelect label="Целевые рынки*" size="short" option={countriesOptions} multi="true" name="markets" />
+              <MySelect label="Предпочтительный язык*" size="short" option={languagesOptions} name="lang" />
+              <MySelect label="Интересующие отрасли*" size="large" option={industriesOptions} multi="true" name="industry" />
               <MyTextArea label="Сообщение" size="large" name="message" />
             </div>
             <div className={classes.block}>

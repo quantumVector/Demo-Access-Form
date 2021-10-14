@@ -17,9 +17,9 @@ export const formValidationSchema = yup.object({
     .required('Обязательное поле')
     .email('Неправильный email')
     .trim(),
-  markets: yup.string().required('Обязательное поле'),
+  markets: yup.array().min(1, 'Обязательное поле'),
   lang: yup.string().required('Обязательное поле'),
-  industry: yup.string().required('Обязательное поле'),
+  industry: yup.array().min(1, 'Обязательное поле'),
   message: yup.string().required('Обязательное поле').trim(),
   check: yup.string().required('Обязательное поле'),
 });
