@@ -21,15 +21,52 @@
   margin-bottom: 20px;
   width: 100%;
   height: 56px;
+  padding-left: 19px;
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
   background: #F8F9F9;
   border: 1px solid #F4F4F6;
   box-sizing: border-box;
   border-radius: 5px;
 }
 
+.indicator {
+  margin-right: 10px;
+}
+
 .item:focus {
   border: 2px solid #66aad4;
   outline: none;
+}
+
+.item::placeholder {
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
+  color: #4E556A;
+}
+
+.fieldError {
+  border: 2px solid #F77F82;
+}
+
+.textError {
+  color: #F77F82;
+}
+
+.selectPlaceholder {
+  padding-left: 10px;
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
+  color: #4E556A;
 }
 
 .label {
@@ -45,6 +82,8 @@
 }
 
 .areaItem {
+  padding-top: 14px;
+  padding-left: 16px;
   height: 105px;
   resize: none;
 }

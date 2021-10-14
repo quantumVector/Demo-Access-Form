@@ -82,6 +82,7 @@
 
 .block:nth-child(7) {
   margin-top: 15px;
+  flex-wrap: nowrap;
 }
 
 .block:nth-child(9) {

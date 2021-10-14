@@ -27,11 +27,11 @@ const DemoForm = ({ categories, countries, languages, industries, getFormData })
             surname: '',
             position: '',
             corporate_email: '',
-            markets: '',
+            markets: Array(0),
             lang: '',
-            industry: '',
+            industry: Array(0),
             message: '',
-            check: ''
+            check: false
           }}
           validationSchema={formValidationSchema}
           onSubmit={(data, { setSubmitting }) => {

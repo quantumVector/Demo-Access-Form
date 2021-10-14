@@ -20,6 +20,5 @@ export const formValidationSchema = yup.object({
   markets: yup.array().min(1, 'Обязательное поле'),
   lang: yup.string().required('Обязательное поле'),
   industry: yup.array().min(1, 'Обязательное поле'),
-  message: yup.string().required('Обязательное поле').trim(),
-  check: yup.string().required('Обязательное поле'),
+  check: yup.boolean().oneOf([true]),
 });
