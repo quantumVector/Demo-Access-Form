@@ -26,9 +26,7 @@ const demoFormReducer = (state = initialState, action) => {
 }
 
 export const getFormData = () => async (dispatch) => {
-
   const response = await demoFormAPI.getFormData();
-  console.log(response)
   if (response) dispatch(setFormData(response));
 }
 
