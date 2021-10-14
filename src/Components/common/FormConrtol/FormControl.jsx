@@ -8,8 +8,9 @@ export const MyTextInput = ({ label, size, ...props }) => {
   const [field, meta] = useField(props);
   return (
     <div className={classes[`${size}Wrap`]}>
-      <input className={classes.item + ' ' + (meta.touched && meta.error && classes.fieldError)} placeholder={label} {...field} {...props} />
-      {/* <label htmlFor={props.id || props.name} className={classes.label}>{label}</label> */}
+      <input className={classes.item + ' ' + (meta.touched && meta.error && classes.fieldError)}
+        placeholder={label} {...field} {...props} />
+      <label htmlFor={props.id || props.name} className={classes.label}>{label}</label>
       {meta.touched && meta.error ? (
         <div className={classes.error}>{meta.error}</div>
       ) : null}
@@ -34,7 +35,6 @@ export const MySelect = ({ label, size, option, multi = false, ...props }) => {
         label={label}
         onChang={onChange}
         setTouched={setTouched} />
-      {/* <label htmlFor={props.id || props.name} className={classes.label}>{label}</label> */}
       {meta.touched && meta.error ? (
         <div className={classes.error}>{meta.error}</div>
       ) : null}
@@ -47,7 +47,6 @@ export const MyTextArea = ({ label, size, ...props }) => {
   return (
     <div className={classes[`${size}Wrap`]}>
       <textarea className={classes.item + ' ' + classes.areaItem} placeholder={label} {...field} {...props} />
-      {/* <label htmlFor={props.id || props.name} className={classes.label}>{label}</label> */}
       {meta.touched && meta.error ? (
         <div className={classes.error}>{meta.error}</div>
       ) : null}
