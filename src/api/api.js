@@ -26,7 +26,20 @@ export const demoFormAPI = {
       });
   },
 
-  submitForm(/* data */) {
-    return instance.post('api/v1/public/auth/registration_demo', { /* data */ });
+  submitForm(dataForm) {
+    const data = {
+      company_name: dataForm.company_name,
+      corporate_email: dataForm.corporate_email,
+      country: dataForm.markets.map(item => item.value),
+      industry: dataForm.industry.map(item => item.value),
+      lang: dataForm.lang,
+      name: dataForm.name,
+      position: dataForm.position,
+      surname: dataForm.surname,
+      user_category: dataForm.user_category,
+      user_country: dataForm.user_country
+    }
+
+    return instance.post('api/v1/public/auth/registration_demo', { data });
   },
 }

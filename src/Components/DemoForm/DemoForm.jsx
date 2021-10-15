@@ -4,7 +4,7 @@ import classes from './DemoForm.module.css';
 import { MyCheckbox, MySelect, MyTextArea, MyTextInput } from '../common/FormConrtol/FormControl';
 import { formValidationSchema } from '../../utils/validators';
 
-const DemoForm = ({ categories, countries, languages, industries, getFormData }) => {
+const DemoForm = ({ categories, countries, languages, industries, getFormData, submitForm }) => {
   useEffect(() => getFormData(), []);
 
   const categoriesOptions = categories.map(item => ({ value: item.id, label: item.name }));
@@ -36,8 +36,7 @@ const DemoForm = ({ categories, countries, languages, industries, getFormData })
           validationSchema={formValidationSchema}
           onSubmit={(data, { setSubmitting }) => {
             setSubmitting(true);
-            // make async call
-            console.log("submit: ", data);
+            submitForm(data);
             setSubmitting(false);
           }}
         >{({ isSubmitting }) => (

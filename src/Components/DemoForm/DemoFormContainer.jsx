@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { getFormData } from '../../redux/demoFormReducer';
+import { getFormData, submitForm } from '../../redux/demoFormReducer';
 import DemoForm from './DemoForm';
 
 const mapStateToProps = (state) => ({
@@ -15,6 +15,9 @@ const mapDispatchToProps = (dispatch) => {
     getFormData: () => {
       dispatch(getFormData());
     },
+    submitForm: (data) => {
+      dispatch(submitForm(data));
+    }
   };
 }
 

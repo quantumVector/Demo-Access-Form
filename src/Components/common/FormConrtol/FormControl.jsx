@@ -33,7 +33,7 @@ export const MySelect = ({ label, size, option, multi = false, ...props }) => {
         meta={meta}
         multi={multi}
         label={label}
-        onChang={onChange}
+        onChange={onChange}
         setTouched={setTouched} />
       {meta.touched && meta.error ? (
         <div className={classes.error}>{meta.error}</div>
