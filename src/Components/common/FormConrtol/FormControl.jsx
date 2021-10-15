@@ -8,7 +8,7 @@ export const MyTextInput = ({ label, size, ...props }) => {
   const [field, meta] = useField(props);
   return (
     <div className={classes[`${size}Wrap`]}>
-      <input className={classes.item + ' ' + (meta.touched && meta.error && classes.fieldError)}
+      <input id={props.id || props.name} className={classes.item + ' ' + (meta.touched && meta.error && classes.fieldError)}
         placeholder={label} {...field} {...props} />
       <label htmlFor={props.id || props.name} className={classes.label}>{label}</label>
       {meta.touched && meta.error ? (

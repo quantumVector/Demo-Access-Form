@@ -31,8 +31,12 @@ export const getFormData = () => async (dispatch) => {
 }
 
 export const submitForm = (dataForm) => async (dispatch) => {
-  const response = await demoFormAPI.submitForm(dataForm);
-  if (response) console.log('success!');
+  try {
+    const response = await demoFormAPI.submitForm(dataForm);
+    if (response) console.log('success');
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 const setFormData = (data) => (
