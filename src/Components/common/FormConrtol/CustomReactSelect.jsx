@@ -12,13 +12,24 @@ const DropdownIndicator = (props) => {
 };
 
 export const CustomReactSelect = (props) => {
+  let selectHeight;
+  let selectMarginBottom;
+
+  if (window.innerWidth <= 768) {
+    selectHeight = '47px';
+    selectMarginBottom = '10px';
+  } else {
+    selectHeight = '56px';
+    selectMarginBottom = '20px';
+  };
+
   const selectStyles = {
     control: (styles, state) => ({
       ...styles,
       backgroundColor: '#F8F9F9',
       borderRadius: '5px',
-      minHeight: '56px',
-      marginBottom: '20px',
+      minHeight: selectHeight,
+      marginBottom: selectMarginBottom,
       transition: 'none',
       border: colorControl(state, props.meta),
       boxShadow: state.isFocused ? 0 : 0,

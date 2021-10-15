@@ -161,4 +161,8 @@ textarea::-webkit-input-placeholder {
   .areaItem {
     height: 125px;
   }
+  .error {
+    top: 44px;
+    font-size: 8px;
+  }
 }
